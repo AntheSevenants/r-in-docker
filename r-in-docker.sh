@@ -55,7 +55,7 @@ dockerfile_rstudio="FROM anthesevenants/$project_name_image:base
 RUN apt-get install -y lsof
 
 # Let's set the working directory correctly (also for the R environment itself)
-RUN echo \"setwd(\"/home/rstudio/$project_name/\")\" > ~/../home/rstudio/.Rprofile
+RUN echo \"setwd(\\\"/home/rstudio/$project_name/\\\")\" > ~/../home/rstudio/.Rprofile
 RUN mkdir -p \"/home/rstudio/.local/share/rstudio/projects_settings/\"
 RUN mkdir -p \"/root/.local/share/rstudio/projects_settings/\"
 RUN chmod -R 777 \"/home/rstudio/.local/\"
